@@ -21,8 +21,6 @@ const Header = () => {
     var colors = [];
     for (var i = 0; i < squareNum; i++) {
       colors.push(randomColor());
-
-      //get random color and push into array
     }
     var random = Math.floor(Math.random() * colors.length);
      colors[random]=randomColor();
@@ -55,13 +53,14 @@ const Header = () => {
      setColorArray(colorg);
 
   }
-      const handlClick=(e)=>{
+    const handlClick=(e)=>{
     setselectedColor(e.target.style.backgroundColor);
+    console.log(e);
     if(selectedColor===trueAnswer){
         trueSelect();
     }
     else{
-
+           
     }
 
   }
@@ -71,7 +70,7 @@ const Header = () => {
       <h1>
         The Great
         <br />
-        <span style={{ color: trueAnswer }}>{randomColor()}</span>
+        <span style={{ color: trueAnswer }}>{trueAnswer}</span>
         <br />
         Color Picking Game
       </h1>
