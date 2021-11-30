@@ -14,8 +14,7 @@ const Header = () => {
     // console.log(trueAnswer);
     return "rgb(" + r + ", " + g + ", " + b + ")";
   };
-  const [colorArray, setColorArray] = useState([]);
-  const [selectedColor, setselectedColor] = useState("rgb(255,255,255)");
+  const [colorArray, setColorArray] = useState([]);  
   
   const generateColorsArray = (x) => {
     var colors = [];
@@ -59,11 +58,14 @@ const Header = () => {
         trueSelect();
     }
     else{
-           
+        e.target.style.backgroundColor="#232323";   
     }
 
   }
+  const newClick=()=>{
+   
 
+  }
   return (
     <div>
       <h1>
@@ -74,7 +76,7 @@ const Header = () => {
         Color Picking Game
       </h1>
       <div id="stripe">
-        <button id="reset">New Colors</button>
+        <button id="reset" onClick={newClick}>New Colors</button>
         <span id="message"></span>
         <button id="easyBtn" onClick={handleEasy}>
           Easy
