@@ -43,7 +43,7 @@ const Header = () => {
     generateColorsArray(6);
     
   };
-  const trueSelect=()=>{
+  const trueSelect =() =>{
    
     var colorg = [];
     for (var i = 0; i < squareNum; i++) {
@@ -51,14 +51,11 @@ const Header = () => {
 
       //get random color and push into array
     }
-    
      setColorArray(colorg);
 
   }
     const handlClick=(e)=>{
-    setselectedColor(e.target.style.backgroundColor);
-    console.log(e);
-    if(selectedColor===trueAnswer){
+    if(e.target.style.backgroundColor===trueAnswer){
         trueSelect();
     }
     else{
