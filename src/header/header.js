@@ -17,9 +17,9 @@ const Header = () => {
   const [colorArray, setColorArray] = useState([]);
   const [selectedColor, setselectedColor] = useState("rgb(255,255,255)");
   
-  const generateColorsArray = () => {
+  const generateColorsArray = (x) => {
     var colors = [];
-    for (var i = 0; i < squareNum; i++) {
+    for (var i = 0; i < x; i++) {
       colors.push(randomColor());
     }
     var random = Math.floor(Math.random() * colors.length);
@@ -30,16 +30,18 @@ const Header = () => {
   };
 
   useEffect(() => {
-    generateColorsArray();
+    generateColorsArray(6);
   }, []);
 
   const handleEasy = () => {
     setSquareNum(3);
-    generateColorsArray();
+    generateColorsArray(3);
+    
   };
   const handleHard = () => {
     setSquareNum(6);
-    generateColorsArray();
+    generateColorsArray(6);
+    
   };
   const trueSelect=()=>{
    
